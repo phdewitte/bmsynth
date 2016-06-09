@@ -2,53 +2,89 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" type="text/css" href="public/style.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="public/jquery.knob.min.js"></script>
   <script src="path/to/build/wad.min.js"></script>
 </head>
 
 <body>
-  <h3 id="header-title">BM Synth</h3>
+  <h3 id="header-title">Beautiful Meaningful Synth</h3>
+
   <div id="synth-module">
-    <select id="waves">
-      <option value="sine">Sine</option>
-      <option value="square">Square</option>
-      <option value="triangle">Triangle</option>
-      <option value="sawtooth">Sawtooth</option>
-    </select>
-    <input type="text" value="75" id="attack-dial">
-    <input type="text" value="75" id="decay-dial">
-    <input type="text" value="75" id="sustain-dial">
-    <input type="text" value="75" id="release-dial">
-      <script>
-        $(function() {
-          $("#attack-dial").knob({
-          'step':0.1,
-          'min':0,
-          'max':2
-          });
-          $("#decay-dial").knob({
-          'step':0.1,
-          'min':0,
-          'max':2
-          });
-          $("#sustain-dial").knob({
-          'step':0.1,
-          'min':0,
-          'max':2
-          });
-          $("#release-dial").knob({
-          'step':0.1,
-          'min':0,
-          'max':2
-          });
-        });
-      </script>
-    <div id="keyboard">
-      <script src="qwerty-hancock.js"></script>
-      <script src="public/app.js"></script>
+
+    <h2>Oscillator Type</h2>
+    <div id="wave-dropdown">
+      <select id="waves">
+        <option value="sine">Sine</option>
+        <option value="square">Square</option>
+        <option value="triangle">Triangle</option>
+        <option value="sawtooth">Sawtooth</option>
+      </select>
     </div>
-  </div>
+
+    <div class="adsr">
+      <div id="attack">
+        <h2>Attack<h2>
+        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="attack-dial">
+        <script>
+          $(function() {
+            $("#attack-dial").knob({
+              'step':0.1,
+              'min':0,
+              'max':2
+            });
+          });
+        </script>
+      </div>
+      <div id="decay">
+        <h2>Decay<h2>
+        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="decay-dial">
+        <script>
+          $(function() {
+            $("#decay-dial").knob({
+              'step':0.1,
+              'min':0,
+              'max':2
+            });
+          });
+        </script>
+      </div>
+      <div id="sustain">
+        <h2>Sustain<h2>
+        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="sustain-dial">
+        <script>
+          $(function() {
+            $("#sustain-dial").knob({
+              'step':0.1,
+              'min':0,
+              'max':2
+            });
+          });
+        </script>
+      </div>
+      <div id="release">
+        <h2>Release<h2>
+        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="release-dial">
+        <script>
+          $(function() {
+            $("#release-dial").knob({
+            'step':0.1,
+            'min':0,
+            'max':2
+            });
+          });
+        </script>
+      </div>
+      <div id="keyboard">
+        <script src="qwerty-hancock.js"></script>
+        <script src="public/app.js"></script>
+      </div>
+    </div>
 </body>
 </html>

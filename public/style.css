@@ -1,12 +1,17 @@
 #header-title {
   text-align: center;
+  font-size: 36px;
 }
 
 #synth-module {
   text-align: center;
   border: 1px solid black;
-  width: 75%;
+  width: 65%;
   margin: auto;
+}
+
+#wave-dropdown {
+  margin-top: 3%
 }
 
 #wave-type {
@@ -14,6 +19,12 @@
 }
 
 #keyboard {
-  left: 25%;
-  right: 25%;
+/*  left: 20%;
+  right: 20%;*/
+  padding: 5%;
+}
+
+.adsr div {
+  display: inline-block;
+  margin: 1%;
 }
