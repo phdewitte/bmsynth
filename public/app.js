@@ -20,11 +20,12 @@ nodes = [];
 masterGain.gain.value = 0.3;
 masterGain.connect(context.destination);
 
+var waveType = document.getElementById("waves")
+
 keyboard.keyDown = function (note, frequency) {
-    console.log(note)
-    console.log(frequency)
     var oscillator = context.createOscillator();
-    oscillator.type = 'square';
+    oscillator.type = waveType.value;
+    console.log(oscillator.type)
     oscillator.frequency.value = frequency;
     oscillator.connect(masterGain);
     oscillator.start(0);

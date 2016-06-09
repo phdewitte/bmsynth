@@ -1,0 +1,21 @@
+{
+  "name": "bmsynth",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "qwerty-hancock.js",
+  "dependencies": {
+    "adsr": "undefined1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phdewitte/bmsynth/issues"
+  },
+  "homepage": "https://github.com/phdewitte/bmsynth#readme"
+}
