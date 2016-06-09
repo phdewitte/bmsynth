@@ -1,0 +1,19 @@
+#header-title {
+  text-align: center;
+}
+
+#synth-module {
+  text-align: center;
+  border: 1px solid black;
+  width: 75%;
+  margin: auto;
+}
+
+#wave-type {
+  margin: 0 0 2% 0;
+}
+
+#keyboard {
+  left: 25%;
+  right: 25%;
+}
