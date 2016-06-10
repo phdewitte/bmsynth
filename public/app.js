@@ -14,6 +14,9 @@ var context = new AudioContext(),
     },
     keyboard = new QwertyHancock(settings);
 
+var delay = context.createDelay(3.0);
+delay.delayTime.value = 3.0;
+
 masterGain = context.createGain();
 nodes = [];
 
@@ -25,10 +28,12 @@ var waveType = document.getElementById("waves")
 keyboard.keyDown = function (note, frequency) {
     var oscillator = context.createOscillator();
     oscillator.type = waveType.value;
-    console.log(oscillator.type)
     oscillator.frequency.value = frequency;
     oscillator.connect(masterGain);
     oscillator.start(0);
+    // oscillator.connect(delay);
+    // delay.connect(destination);
+    // this.setAttribute('disabled', 'disabled');
 
     nodes.push(oscillator);
 };
@@ -38,7 +43,10 @@ keyboard.keyUp = function (note, frequency) {
 
     for (var i = 0; i < nodes.length; i++) {
         if (Math.round(nodes[i].frequency.value) === Math.round(frequency)) {
+            // oscillator.disconnect(delay);
+            // delay.disconnect(destination);
             nodes[i].stop(0);
+            // nodes[i].removeAttr('disabled')
             nodes[i].disconnect();
         } else {
             new_nodes.push(nodes[i]);
@@ -47,6 +55,14 @@ keyboard.keyUp = function (note, frequency) {
 
     nodes = new_nodes;
 };
+
+
+// var delay1;
+//     rangeSynth.oninput = function() {
+//     delay1 = rangeSynth.value;
+//     synthDelay.delayTime.value = delay1;
+// }
+
 
 // window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
