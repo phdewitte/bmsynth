@@ -30,6 +30,26 @@
       </select>
     </div>
 
+    <h2>Filter Type</h2>
+    <div id="filter-dropdown">
+      <select id="filter" onselect="FilterSample.toggleFilter(this);">
+        <option value="nofilter"> - <option>
+        <option value="lowpass">LowPass</option>
+        <option value="hipass">HiPass</option>
+        <option value="bandpass">BandPass</option>
+        <option value="lowshelf">LowShelf</option>
+        <option value="hishelf">HiShelf</option>
+        <option value="peaking">Peaking</option>
+        <option value="notch">Notch</option>
+        <option value="allpass">AllPass</option>
+      </select>
+    </div>
+    <p>Frequency
+    <input type="range" min="0" max="1" step="0.01" value="1" oninput="FilterSample.changeFrequency(this);">
+    Quality
+    <input type="range" min="0" max="1" step="0.01" value="0" oninput="FilterSample.changeQuality(this);">
+  </p>
+
     <div class="adsr">
       <div id="attack">
         <h2>Attack<h2>
