@@ -10,7 +10,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="public/jquery.knob.min.js"></script>
-  <script src="path/to/build/wad.min.js"></script>
 </head>
 
 <body>
@@ -52,24 +51,24 @@
 
     <div class="adsr">
       <div id="attack">
-        <h2>Attack<h2>
-        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="attack-dial">
+        <h2>LFO Rate<h2>
+        <input type="text" value="75" data-displayPrevious=true id="lfo-rate">
         <script>
           $(function() {
-            $("#attack-dial").knob({
+            $("#lfo-rate").knob({
               'step':0.1,
               'min':0,
-              'max':2
+              'max':5
             });
           });
         </script>
       </div>
       <div id="decay">
-        <h2>Decay<h2>
-        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="decay-dial">
+        <h2>LFO Gain<h2>
+        <input type="text" value="75" data-displayPrevious=true id="lfo-gain">
         <script>
           $(function() {
-            $("#decay-dial").knob({
+            $("#lfo-gain").knob({
               'step':0.1,
               'min':0,
               'max':2
@@ -79,7 +78,7 @@
       </div>
       <div id="sustain">
         <h2>Sustain<h2>
-        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="sustain-dial">
+        <input type="text" value="75" data-displayPrevious=true id="sustain-dial">
         <script>
           $(function() {
             $("#sustain-dial").knob({
@@ -92,7 +91,7 @@
       </div>
       <div id="release">
         <h2>Release<h2>
-        <input type="text" value="75" data-angleOffset=-125 data-angleArc=250 id="release-dial">
+        <input type="text" value="75" data-displayPrevious=true id="release-dial">
         <script>
           $(function() {
             $("#release-dial").knob({
