@@ -31,6 +31,7 @@ keyboard.keyDown = function (note, frequency) {
     oscillator.frequency.value = frequency;
     oscillator.connect(masterGain);
     oscillator.start(0);
+    oscillator.FilterSample.play
     // oscillator.connect(delay);
     // delay.connect(destination);
     // this.setAttribute('disabled', 'disabled');
