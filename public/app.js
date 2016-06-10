@@ -23,8 +23,10 @@ nodes = [];
 
 // User Defined Controls
 var waveType = document.getElementById("waves")
-var lfoRate = document.getElementById("lfo-rate").value
-console.log(lfoRate)
+var lfoForm = document.getElementById("lfo-rate")
+// var lfoRate = lfoForm.innerHTML =
+// console.log("At var set")
+// console.log(lfoRate)
 
 // Synthesis
 keyboard.keyDown = function (note, frequency) {
@@ -57,7 +59,9 @@ keyboard.keyUp = function (note, frequency) {
 
 
 var lfo = context.createOscillator();
-lfo.frequency.value = 2.0;
+// console.log("At LFO function")
+lfo.frequency.value = 3.0;
+// console.log(lfo.frequency.value)
 var lfoGain = context.createGain();
 lfoGain.value = 0.4
 lfo.connect(lfoGain.gain);
