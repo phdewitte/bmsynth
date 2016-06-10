@@ -52,15 +52,18 @@
     <div class="adsr">
       <div id="attack">
         <h2>LFO Rate<h2>
-        <input type="text" value="75" data-displayPrevious=true id="lfo-rate">
+        <input type="text" value="0" data-displayPrevious=true id="lfo-rate">
         <script>
           $(function() {
             $("#lfo-rate").knob({
               'step':0.1,
               'min':0,
-              'max':5
+              'max':5,
+              'change' : function(current) { $('#lfo-rate').val(current) }
             });
           });
+          // console.log("At Knob")
+          // console.log($('#lfo-rate'))
         </script>
       </div>
       <div id="decay">
